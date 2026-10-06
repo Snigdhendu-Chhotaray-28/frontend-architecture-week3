@@ -1,0 +1,38 @@
+# TaskFlow – Requirement Traceability Matrix
+
+**Project:** TaskFlow – React State Management & Hooks Dashboard  
+**Internship Module:** Week 3: State Management and Hooks Implementation  
+**Student/Intern Workspace:** Antigravity Engineering Workspace  
+
+---
+
+## 1. Traceability Matrix
+
+| Requirement Category | Specific Assignment Requirement | Code Implementation Location | Concrete Verification Evidence | Status |
+| :--- | :--- | :--- | :--- | :---: |
+| **State Management: useState** | Local form fields, modal states, editing state, filter toggles | [`TaskForm.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/tasks/TaskForm.jsx), [`Dashboard.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/dashboard/Dashboard.jsx), [`App.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/App.jsx) | `docs/testing/chrome/02-add-task-modal.png`<br>`docs/testing/chrome/04-edit-task.png` | **FULFILLED** |
+| **State Management: useEffect** | LocalStorage synchronization, dynamic document title updating, side effects | [`TaskContext.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/context/TaskContext.jsx), [`useLocalStorage.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/hooks/useLocalStorage.js), [`useDebounce.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/hooks/useDebounce.js) | Code implementation + browser title bar verification | **FULFILLED** |
+| **Custom Hook 1** | `useLocalStorage(key, initialValue)` for robust persistence | [`useLocalStorage.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/hooks/useLocalStorage.js) | `docs/testing/chrome/09-localstorage.png` | **FULFILLED** |
+| **Custom Hook 2** | `useTasks()` for consuming `TaskContext` business logic and actions | [`useTasks.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/hooks/useTasks.js) | Consumed across `Header`, `Sidebar`, `Dashboard`, `TaskList`, `TaskFilters` | **FULFILLED** |
+| **Custom Hook 3** | `useDebounce(value, delay)` for search input optimization | [`useDebounce.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/hooks/useDebounce.js) | `docs/testing/chrome/07-search.png` | **FULFILLED** |
+| **Context API** | Centralized `TaskProvider` with `createContext`, `useContext`, CRUD actions, filters, stats | [`TaskContext.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/context/TaskContext.jsx) | `src/context/TaskContext.jsx` codebase | **FULFILLED** |
+| **State Architecture** | Clear separation of Global State, Local UI State, and Derived State | Documented in Report & Architecture design | `docs/testing/chrome/08-statistics.png` | **FULFILLED** |
+| **CSS-in-JS Architecture** | Strict use of `styled-components`, `ThemeProvider`, centralized `theme.js`, zero static css | [`theme.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/styles/theme.js), [`GlobalStyles.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/styles/GlobalStyles.js), All component files | `package.json`, styled components across `src/components/` | **FULFILLED** |
+| **Core CRUD Operations** | Add, Edit, Delete, Toggle Complete/Pending | [`TaskContext.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/context/TaskContext.jsx), [`TaskCard.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/tasks/TaskCard.jsx) | `docs/testing/chrome/03-task-created.png`<br>`docs/testing/chrome/05-task-completed.png` | **FULFILLED** |
+| **Filtering & Sorting** | Filter by status, priority, category; Sort by date, priority, title | [`TaskFilters.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/tasks/TaskFilters.jsx), [`taskUtils.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/utils/taskUtils.js) | `docs/testing/chrome/06-filters.png`<br>`docs/testing/chrome/07-search.png` | **FULFILLED** |
+| **Statistics Dashboard** | Total, Completed, In Progress, High Priority, and Completion Rate Bar | [`Statistics.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/dashboard/Statistics.jsx), [`StatisticsCard.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/dashboard/StatisticsCard.jsx) | `docs/testing/chrome/08-statistics.png` | **FULFILLED** |
+| **Responsive Design** | Desktop (1920/1440), Laptop (1366), Tablet (768), Mobile (390) | Theme media queries, adaptive sidebar drawer, card grid | `docs/testing/mobile/13-mobile-testing.png`<br>`docs/testing/tablet/14-tablet-testing.png` | **FULFILLED** |
+| **Accessibility (a11y)** | Semantic HTML, ARIA labels, keyboard ESC modal dismissal, focus styles | Form labels, modal role="dialog", button types, focus rings | Source code audit in `Modal.jsx`, `Input.jsx`, `Button.jsx` | **FULFILLED** |
+| **Cross-Browser Evidence** | Actual screenshots & verification across Chrome, Edge, Firefox, Mobile | Executed via automated browser capture against native binaries | 14 captured screenshots in `docs/testing/` | **FULFILLED** |
+| **Error Handling** | Form validation, empty states, missing search results, storage fallback | [`taskUtils.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/utils/taskUtils.js), [`EmptyState.jsx`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/components/common/EmptyState.jsx), [`useLocalStorage.js`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/src/hooks/useLocalStorage.js) | Runtime validation & EmptyState component | **FULFILLED** |
+| **Code Documentation** | Clear, purposeful comments on business logic and state architecture | All custom hooks, utils, context, and components | Source code review | **FULFILLED** |
+| **Technical Report** | Comprehensive 37-section internship report with WHAT/WHY/HOW justifications | [`Week_3_State_Management_and_Hooks_Report.md`](file:///d:/Users/DELL/WebDev/Projects/Git%20projects/yuva/frontend-architecture-week3/docs/Week_3_State_Management_and_Hooks_Report.md) | Markdown report document | **FULFILLED** |
+
+---
+
+## 2. Weakness Remediation Audit (Addressing Previous Feedback)
+
+| Feedback Point from Previous Week | Remediation Strategy Implemented in Week 3 | Verification Proof |
+| :--- | :--- | :--- |
+| *"Did not strictly adhere to the CSS-in-JS or preprocessor requirement"* | 100% migrated to **`styled-components`** with a centralized theme system (`theme.js`), `ThemeProvider` wrapper, props-driven dynamic styling, and complete avoidance of external CSS files. | `package.json` dependencies, `src/styles/theme.js`, all 12 styled component files. |
+| *"Testing evidence is partly planned and lacks actual screenshots or logs of cross-browser verification"* | Built an automated cross-browser test runner (`scripts/capture-evidence.js`) that launched real **Google Chrome**, **Microsoft Edge**, and mobile/tablet viewport profiles, generating **14 high-resolution screenshot artifacts** and a formal test results matrix. | 14 PNG files in `docs/testing/`, log files in `.system_generated/tasks/`, `docs/testing/test-results.md`. |
